@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = null;
         }
 
 
@@ -66,6 +66,11 @@ namespace WindowsFormsApp1
     private void UsernameTxt_Entering(object sender, EventArgs e)
         {
             UsernameTxt.Clear(); // When the text box is clicked on the sample text inside will disappear
+        }
+
+        private void CancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
