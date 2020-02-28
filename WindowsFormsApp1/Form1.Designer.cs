@@ -41,9 +41,11 @@
             this.UsernameTxt.Name = "UsernameTxt";
             this.UsernameTxt.Size = new System.Drawing.Size(165, 20);
             this.UsernameTxt.TabIndex = 0;
+            this.UsernameTxt.TabStop = false;
             this.UsernameTxt.Text = "Username";
             this.UsernameTxt.TextChanged += new System.EventHandler(this.UsernameTxt_TextChanged);
             this.UsernameTxt.Enter += new System.EventHandler(this.UsernameTxt_Entering);
+            this.UsernameTxt.Leave += new System.EventHandler(this.UsernameTxt_Leave);
             // 
             // PasswordTxt
             // 
@@ -51,6 +53,7 @@
             this.PasswordTxt.Name = "PasswordTxt";
             this.PasswordTxt.Size = new System.Drawing.Size(165, 20);
             this.PasswordTxt.TabIndex = 1;
+            this.PasswordTxt.TabStop = false;
             this.PasswordTxt.Text = "Password";
             this.PasswordTxt.TextChanged += new System.EventHandler(this.PasswordTxt_TextChanged);
             this.PasswordTxt.Enter += new System.EventHandler(this.PasswordTxt_Entering);

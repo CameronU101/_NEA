@@ -21,14 +21,12 @@ namespace WindowsFormsApp1
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            
         }
-
 
         private void PasswordTxt_TextChanged(object sender, EventArgs e)
         {
-            
-                       
+                 
         }
 
         private void PasswordTxt_Entering(object sender, EventArgs e)
@@ -42,7 +40,6 @@ namespace WindowsFormsApp1
 
         private void PasswordTxt_Leave(object sender, EventArgs e)
         {
-            
             if (string.IsNullOrWhiteSpace(PasswordTxt.Text))
             {
                 PasswordTxt.PasswordChar = '\0';
@@ -54,23 +51,40 @@ namespace WindowsFormsApp1
             {
                 TextEmpty = false;
             }
-                        
-
         }
 
         private void UsernameTxt_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
-    private void UsernameTxt_Entering(object sender, EventArgs e)
+        private void UsernameTxt_Entering(object sender, EventArgs e)
         {
-            UsernameTxt.Clear(); // When the text box is clicked on the sample text inside will disappear
+            if (string.IsNullOrWhiteSpace(UsernameTxt.Text) || TextEmpty == true)
+            {
+                UsernameTxt.Clear(); // When the text box is clicked on the sample text inside will disappear
+            }
+        }
+
+        private void UsernameTxt_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(UsernameTxt.Text))
+            {
+                UsernameTxt.PasswordChar = '\0';
+                UsernameTxt.Text = "Username";
+                TextEmpty = true;
+            }
+
+            else
+            {
+                TextEmpty = false;
+            }
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
+        
     }
 }
