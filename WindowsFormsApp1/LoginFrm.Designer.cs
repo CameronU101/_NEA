@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Main
+    partial class LoginFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,78 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.UsernameTxt = new System.Windows.Forms.TextBox();
+            this.PasswordTxt = new System.Windows.Forms.TextBox();
+            this.LoginBtn = new System.Windows.Forms.Button();
+            this.CancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listBox1
+            // UsernameTxt
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 28);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(274, 407);
-            this.listBox1.TabIndex = 0;
+            this.UsernameTxt.Location = new System.Drawing.Point(30, 46);
+            this.UsernameTxt.Name = "UsernameTxt";
+            this.UsernameTxt.Size = new System.Drawing.Size(165, 20);
+            this.UsernameTxt.TabIndex = 0;
+            this.UsernameTxt.TabStop = false;
+            this.UsernameTxt.Text = "Username";
+            this.UsernameTxt.Enter += new System.EventHandler(this.UsernameTxt_Entering);
+            this.UsernameTxt.Leave += new System.EventHandler(this.UsernameTxt_Leave);
+            // 
+            // PasswordTxt
+            // 
+            this.PasswordTxt.Location = new System.Drawing.Point(30, 84);
+            this.PasswordTxt.Name = "PasswordTxt";
+            this.PasswordTxt.Size = new System.Drawing.Size(165, 20);
+            this.PasswordTxt.TabIndex = 1;
+            this.PasswordTxt.TabStop = false;
+            this.PasswordTxt.Text = "Password";
+            this.PasswordTxt.Enter += new System.EventHandler(this.PasswordTxt_Entering);
+            this.PasswordTxt.Leave += new System.EventHandler(this.PasswordTxt_Leave);
+            // 
+            // LoginBtn
+            // 
+            this.LoginBtn.Location = new System.Drawing.Point(30, 129);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.LoginBtn.TabIndex = 2;
+            this.LoginBtn.Text = "Login";
+            this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.Login_Click);
+            // 
+            // CancelBtn
+            // 
+            this.CancelBtn.Location = new System.Drawing.Point(120, 129);
+            this.CancelBtn.Name = "CancelBtn";
+            this.CancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.CancelBtn.TabIndex = 3;
+            this.CancelBtn.Text = "Cancel";
+            this.CancelBtn.UseVisualStyleBackColor = true;
+            this.CancelBtn.Click += new System.EventHandler(this.CancelBtn_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 7);
+            this.label1.Location = new System.Drawing.Point(27, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Enter your login details:";
             // 
-            // Main
+            // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 454);
+            this.ClientSize = new System.Drawing.Size(228, 167);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
-            this.Name = "Main";
-            this.Text = "Main";
+            this.Controls.Add(this.CancelBtn);
+            this.Controls.Add(this.LoginBtn);
+            this.Controls.Add(this.PasswordTxt);
+            this.Controls.Add(this.UsernameTxt);
+            this.Name = "LoginFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -66,7 +107,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox UsernameTxt;
+        private System.Windows.Forms.TextBox PasswordTxt;
+        private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.Button CancelBtn;
         private System.Windows.Forms.Label label1;
     }
 }
+
