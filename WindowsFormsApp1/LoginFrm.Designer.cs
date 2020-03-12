@@ -43,6 +43,7 @@
             this.UsernameTxt.TabIndex = 0;
             this.UsernameTxt.TabStop = false;
             this.UsernameTxt.Text = "Username";
+            this.UsernameTxt.TextChanged += new System.EventHandler(this.UsernameTxt_TextChanged);
             this.UsernameTxt.Enter += new System.EventHandler(this.UsernameTxt_Entering);
             this.UsernameTxt.Leave += new System.EventHandler(this.UsernameTxt_Leave);
             // 
@@ -54,6 +55,7 @@
             this.PasswordTxt.TabIndex = 1;
             this.PasswordTxt.TabStop = false;
             this.PasswordTxt.Text = "Password";
+            this.PasswordTxt.TextChanged += new System.EventHandler(this.PasswordTxt_TextChanged);
             this.PasswordTxt.Enter += new System.EventHandler(this.PasswordTxt_Entering);
             this.PasswordTxt.Leave += new System.EventHandler(this.PasswordTxt_Leave);
             // 
@@ -90,13 +92,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(228, 167);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelBtn);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.PasswordTxt);
             this.Controls.Add(this.UsernameTxt);
+            this.MaximizeBox = false;
             this.Name = "LoginFrm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

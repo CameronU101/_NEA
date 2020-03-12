@@ -16,7 +16,11 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginFrm());
+            if (new LoginFrm().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new DatabaseFrm());
+            }
+
         }
     }
 }

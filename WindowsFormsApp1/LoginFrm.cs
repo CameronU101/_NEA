@@ -13,7 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class LoginFrm : Form
     {
-        public bool TextEmpty = true;
+        public bool UsernameTextEmpty = true;
+        public bool PasswordTextEmpty = true;
 
         public LoginFrm()
         {
@@ -39,9 +40,8 @@ namespace WindowsFormsApp1
 
             if (reader != null)
             {
-                Close();
                 DatabaseFrm objDatabaseFrm = new DatabaseFrm();
-                DatabaseFrm.Show();
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
 
         private void PasswordTxt_Entering(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(PasswordTxt.Text) || TextEmpty == true)  
+            if (string.IsNullOrWhiteSpace(PasswordTxt.Text) || PasswordTextEmpty == true)  
             {
                 PasswordTxt.Clear(); // When the text box is clicked on the sample text inside will disappear
             }
@@ -64,18 +64,18 @@ namespace WindowsFormsApp1
             {
                 PasswordTxt.PasswordChar = '\0';
                 PasswordTxt.Text = "Password";
-                TextEmpty = true;
+                PasswordTextEmpty = true;
             }
 
             else
             {
-                TextEmpty = false;
+                PasswordTextEmpty = false;
             }
         }
 
         private void UsernameTxt_Entering(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(UsernameTxt.Text) || TextEmpty == true)
+            if (string.IsNullOrWhiteSpace(UsernameTxt.Text) || UsernameTextEmpty == true)
             {
                 UsernameTxt.Clear(); // When the text box is clicked on the sample text inside will disappear
             }
@@ -87,12 +87,12 @@ namespace WindowsFormsApp1
             {
                 UsernameTxt.PasswordChar = '\0';
                 UsernameTxt.Text = "Username";
-                TextEmpty = true;
+                UsernameTextEmpty = true;
             }
 
             else
             {
-                TextEmpty = false;
+                UsernameTextEmpty = false;
             }
         }
 
@@ -100,6 +100,15 @@ namespace WindowsFormsApp1
         {
             Close();
         }
-        
+
+        private void UsernameTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
